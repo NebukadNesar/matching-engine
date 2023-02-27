@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    baseName = 'exchange'
+    manifest {
+        attributes(
+                'Main-Class': 'org.example.Exchange'
+        )
+    }
+}
+
+dependencies {
+    testImplementation("junit:junit:4.13.2")
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.8.2")
+}
+
+test {
+    useJUnitPlatform()
+}
